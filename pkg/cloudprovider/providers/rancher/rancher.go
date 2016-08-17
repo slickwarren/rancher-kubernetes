@@ -581,7 +581,9 @@ func (r *CloudProvider) NodeAddresses(name string) ([]api.NodeAddress, error) {
 	addresses := []api.NodeAddress{}
 	for _, ip := range host.IPAddresses {
 		addresses = append(addresses, api.NodeAddress{Type: api.NodeExternalIP, Address: ip.Address})
+		addresses = append(addresses, api.NodeAddress{Type: api.NodeLegacyHostIP, Address: ip.Address})
 	}
+	addresses = append(addresses, api.NodeAddress{Type: api.NodeHostName, Address: host.RancherHost.Hostname})
 
 	return addresses, nil
 }
