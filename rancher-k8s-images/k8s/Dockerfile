@@ -13,6 +13,8 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get update -y \
     nfs-common \
     jq \
     unzip \
+    git \
+    glusterfs-client \
     && DEBIAN_FRONTEND=noninteractive apt-get autoremove -y \
     && DEBIAN_FRONTEND=noninteractive apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
