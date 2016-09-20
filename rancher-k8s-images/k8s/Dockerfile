@@ -25,7 +25,7 @@ RUN cp /usr/bin/nsenter /nsenter
 COPY entry.sh kubelet-start.sh kubelet kube-proxy kube-apiserver kube-controller-manager kube-scheduler /usr/bin/
 
 RUN mkdir -p /opt/cni/bin /etc/cni/net.d
-RUN curl -sfSL https://github.com/containernetworking/cni/releases/download/v0.3.0/cni-v0.3.0.tgz | \
+RUN curl -sfSL https://github.com/rancher/cni/releases/download/v0.3.0-rancher1/cni-v0.3.0-rancher1.tgz | \
     tar xvzf - -C /tmp ./bridge && \
     mv /tmp/bridge /opt/cni/bin/rancher-bridge
 
