@@ -300,7 +300,9 @@ func PreInitRuntimeService(kubeCfg *kubeletconfiginternal.KubeletConfiguration,
 	}
 
 	kubeDeps.useLegacyCadvisorStats = cadvisor.UsingLegacyCadvisorStats(remoteRuntimeEndpoint)
-
+	if kubeDeps.useLegacyCadvisorStats {
+		klog.InfoS("using legacy cadvisor stats for remote runtime endpoint %s", remoteRuntimeEndpoint)
+	}
 	return nil
 }
 
