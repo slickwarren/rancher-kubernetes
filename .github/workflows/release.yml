@@ -15,7 +15,7 @@ jobs:
     steps:
       - name: Check For Alpha / RC in Release
         if: contains(github.ref_name, 'rc')  || contains(github.ref_name, 'alpha')
-        uses: actions/github-script@v3
+        uses: actions/github-script@v7
         with:
           script: |
             core.setFailed('No RCs or Alphas are released in this repo. Skipping release...') 
