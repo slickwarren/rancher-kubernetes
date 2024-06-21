@@ -10,7 +10,7 @@ KUBE_BUILD_PLATFORMS="linux/arm64 linux/amd64"
 K8S_BASE="k8s.io/component-base"
 
 mkdir -p output/bin
-if [ -n "$DRONE_TAG" ]; then
+if [ -n "$VERSION" ]; then
     TAG=$VERSION
 fi
 
