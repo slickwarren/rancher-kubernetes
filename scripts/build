@@ -32,7 +32,7 @@ for ARCH in ${OS_ARCH_LINUX}; do
         tar -cvzf output/bin/kubelet-$TAG-$ARCH.tar.gz kubelet && rm kubelet
 done
 
-sha256sum output/bin/* > bin/sha256sum.txt
+sha256sum output/bin/* > output/bin/sha256sum.txt
 
 rm -rf _output/
 

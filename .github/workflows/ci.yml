@@ -3,6 +3,9 @@ run-name: CI on ${{ github.event_name }}
 
 on:
   pull_request:
+  push:
+    branches:
+      - '*'
 
 jobs:
   validate:
